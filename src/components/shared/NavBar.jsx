@@ -12,9 +12,9 @@ const NavBar = () => {
         className="bg-black text-white h-[60px] text-sm flex items-center justify-between md:w-full md:px-[87px] px-4"
       >
         <div className="flex gap-2 items-center content-center">
-          <img src="/assets/icons/red_ellipse.svg" alt="" />
+          <img src="/assets/icons/red_ellipse.svg" alt="ellipse" />
           <p>Join live service now</p>
-          <img src="/assets/icons/arrow.svg" alt="" />
+          <img src="/assets/icons/arrow.svg" alt="arrow" />
         </div>
         <div id="icons" className="flex gap-[18px]">
           <img src="/assets/icons/youtube.svg" alt="" />
@@ -27,7 +27,7 @@ const NavBar = () => {
         id="bottom-nav"
         className="h-[68px] flex justify-between bg-white p-5 border md:px-[81px]"
       >
-        <img src="/assets/icons/logo.svg" alt="" height={30} width={30} />
+        <img src="/assets/icons/logo.svg" alt="logo" height={30} width={30} />
 
         <img
           src="/assets/icons/hamburger.svg"

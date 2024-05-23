@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Outlet } from "react-router-dom";
-import { NavBar } from "../components/shared";
+import { Footer, NavBar } from "../components/shared";
 
 const RootLayout = () => {
   return (
@@ -11,6 +11,8 @@ const RootLayout = () => {
       <section className="flex flex-1 h-full">
         <Outlet />
       </section>
+
+      <Footer />
     </div>
   );
 };
