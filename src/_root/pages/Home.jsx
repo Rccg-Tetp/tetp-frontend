@@ -1,5 +1,6 @@
 import EventTimer from "../../components/EventTimer";
 import HeroSection from "../../components/HeroSection";
+import PrayerSection from "../../components/PrayerSection";
 import SermonsSection from "../../components/SermonsSection";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <HeroSection />
       <EventTimer />
       <SermonsSection />
+      <PrayerSection />
     </div>
   );
 };
