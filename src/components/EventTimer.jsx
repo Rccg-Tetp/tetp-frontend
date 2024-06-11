@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const EventTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-06-09T08:00:00") - +new Date();
+    const difference = +new Date("2024-06-16T08:00:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -87,7 +87,7 @@ const EventTimer = () => {
       </div>
 
       <h2 className="pt-[39px] font-satoshi font-medium text-xl/[24px] md:text-[24px] md:pt-[68px]">
-        Sunday, 12th May, 2024 | 9:00am
+        Sunday, 16th June, 2024 | 8:00am
       </h2>
 
       <p className="pt-[31px] text-center mx-[37px] pb-[59px] font-satoshi text-xl/[24px] md:pb-[123px]">
