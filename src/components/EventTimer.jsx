@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const EventTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-05-30T08:00:00") - +new Date();
+    const difference = +new Date("2024-06-09T08:00:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

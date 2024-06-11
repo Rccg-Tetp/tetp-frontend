@@ -26,3 +26,24 @@
   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
   -webkit-text-stroke: 0.5px white;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(39, 38, 38);
+  height: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

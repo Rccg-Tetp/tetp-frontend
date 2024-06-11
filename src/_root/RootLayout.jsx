@@ -5,13 +5,12 @@ import { Footer, NavBar } from "../components/shared";
 
 const RootLayout = () => {
   return (
-    <div className="w-full md:flex md:flex-col">
+    <div className="w-full min-h-screen flex flex-col">
       <NavBar />
 
-      <section className="flex flex-1 h-full">
+      <section className="flex flex-1">
         <Outlet />
       </section>
-
       <Footer />
     </div>
   );

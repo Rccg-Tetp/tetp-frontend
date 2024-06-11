@@ -4,7 +4,6 @@ import useWidth from "../hooks/useWidth";
 const SermonsSection = () => {
   const { width, breakpoints } = useWidth();
 
-  console.log(width);
   return (
     <div className="bg-[url('/assets/images/img-3.svg')] bg-no-repeat bg-center bg-cover min-h-[1465px] md:min-h-[692px] relative">
       {width < breakpoints.md && (
@@ -38,12 +37,17 @@ const SermonsSection = () => {
             );
           })}
         </div>
-        <div className="text-center p-4 mt-[50px]">
+        <div className="text-center p-4 mt-[50px] flex justify-center items-center">
           <a
             href="#"
-            className="bg-primary text-white py-4 px-[19.5px] font-satoshi font-medium rounded-[5px] text-lg/[24px]"
+            className="bg-primary text-white py-4 px-[19.5px] font-satoshi font-medium rounded-[5px] text-lg/[24px] flex w-[219px] items-center justify-between gap-[6.5px]"
           >
-            See more sermons →
+            <p>See more sermons</p>
+            <img
+              src="/assets/icons/arrow.svg"
+              className="pt-[4px]"
+              alt="arrow"
+            />
           </a>
         </div>
       </div>

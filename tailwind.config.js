@@ -15,6 +15,12 @@ export default {
         orange: {
           650: "#F14A16",
         },
+        pink: {
+          soft: "#FEF0EC",
+        },
+        gray: {
+          custom: "#F5F5F5",
+        },
         primary: "#2D6781",
       },
     },

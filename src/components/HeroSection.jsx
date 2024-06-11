@@ -19,7 +19,7 @@ const HeroSection = () => {
     <section className="w-full">
       <div className="relative">
         <img
-          src="/assets/images/hero-bg.svg"
+          src="/assets/images/pastoral-1.svg"
           className="object-cover h-[538px] w-full md:h-[730px]"
           alt=""
         />
@@ -51,8 +51,10 @@ const HeroSection = () => {
         id="img-section"
         className="flex justify-center pt-[52px] md:pt-[53px]"
       >
-        {width < 768 && <img src="/assets/images/img-2.svg" alt="gallery" />}
-        {width >= 768 && <img src="/assets/images/gallery.svg" alt="gallery" />}
+        {width < 768 && <img src="/assets/images/prayer-3.svg" alt="gallery" />}
+        {width >= 768 && (
+          <img src="/assets/images/prayer-2.svg" alt="gallery" />
+        )}
       </div>
 
       <div className="flex flex-col items-center pt-[54px] md:pt-[60px]">
