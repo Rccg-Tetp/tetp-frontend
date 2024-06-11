@@ -1,4 +1,8 @@
+import useWidth from "../hooks/useWidth";
+
 const Teams = () => {
+  const { width, breakpoints } = useWidth();
+
   const data = [
     {
       img: "/assets/images/faithfuls.svg",
@@ -28,6 +32,8 @@ const Teams = () => {
     },
   ];
 
+  const result = width < breakpoints.md ? data.slice(0, 3) : data;
+
   return (
     <section className="flex flex-col items-center">
       <h4 className="uppercase font-lateef font-normal text-xl mt-[55px]">
@@ -38,7 +44,7 @@ const Teams = () => {
       </h2>
 
       <div className="grid grid-cols-1 mt-[90px] gap-[55px] md:grid-cols-2 md:gap-[19px] md:mt-[50px]">
-        {data.map((item) => {
+        {result.map((item) => {
           return (
             <div className="relative" key={item.name}>
               <img
