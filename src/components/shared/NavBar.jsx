@@ -17,9 +17,15 @@ const NavBar = () => {
           <img src="/assets/icons/arrow.svg" alt="arrow" />
         </div>
         <div id="icons" className="flex gap-[18px]">
-          <img src="/assets/icons/youtube.svg" alt="" />
-          <img src="/assets/icons/facebook.svg" alt="" />
-          <img src="/assets/icons/insta.svg" alt="" />
+          <a href="https://www.youtube.com/@rccgtetp" target="_blank">
+            <img src="/assets/icons/youtube.svg" alt="" />
+          </a>
+          <a href="https://www.facebook.com/rccgtetp/" target="_blank">
+            <img src="/assets/icons/facebook.svg" alt="" />
+          </a>
+          <a href="https://www.instagram.com/rccgtetp/?hl=en" target="_blank">
+            <img src="/assets/icons/insta.svg" alt="" />
+          </a>
         </div>
       </div>
 
@@ -27,7 +33,9 @@ const NavBar = () => {
         id="bottom-nav"
         className="h-[68px] flex justify-between bg-white p-5 border md:px-[81px]"
       >
-        <img src="/assets/icons/logo.svg" alt="logo" height={30} width={30} />
+        <a href="/">
+          <img src="/assets/icons/logo.svg" alt="logo" height={30} width={30} />
+        </a>
 
         <img
           src="/assets/icons/hamburger.svg"
