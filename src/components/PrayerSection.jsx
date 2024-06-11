@@ -6,7 +6,7 @@ const PrayerSection = () => {
         <img
           src="/assets/images/prayer-1.svg"
           alt="prayer"
-          className="absolute top-[0.125rem] left-[4rem] rounded-[10px] max-w-[18.5rem] h-[17.875rem] object-center z-[1] md:top-[156px] md:left-[110px] md:max-w-[506px] md:h-[352px]"
+          className="absolute top-[3.125rem] left-[4rem] rounded-[10px] max-w-[17.75rem] object-center z-[1] md:top-[156px] md:left-[110px] md:max-w-[506px] md:h-[352px]"
         />
       </div>
 
