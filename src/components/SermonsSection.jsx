@@ -1,15 +1,27 @@
+import { useEffect, useState } from "react";
 import { sermons } from "../constants";
-import useWidth from "../hooks/useWidth";
 
 const SermonsSection = () => {
-  const { width, breakpoints } = useWidth();
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="bg-[url('/assets/images/img-3.svg')] bg-no-repeat bg-center bg-cover min-h-[1465px] md:min-h-[692px] relative">
-      {width < breakpoints.md && (
+      {width < 768 && (
         <img src="/assets/images/orange-rect.svg" alt="rectangle" />
       )}
-      {width >= breakpoints.md && (
+      {width >= 768 && (
         <img
           src="/assets/images/orange-rect-big.svg"
           alt="rectangle"

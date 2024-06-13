@@ -1,11 +1,23 @@
 import YouTube from "react-youtube";
-import useWidth from "../hooks/useWidth";
+import { useEffect, useState } from "react";
 
 function LastService() {
-  const { width, breakpoints } = useWidth();
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const opts = {
-    height: `${width < breakpoints.md ? 455 : 485}`,
-    width: `${width < breakpoints.md ? 362 : 1280}`,
+    height: `${width < 768 ? 455 : 485}`,
+    width: `${width < 768 ? 362 : 1280}`,
   };
   return (
     <section className="md:bg-gray-custom flex flex-col items-center">
