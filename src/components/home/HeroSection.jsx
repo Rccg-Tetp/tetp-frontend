@@ -53,7 +53,11 @@ const HeroSection = () => {
       >
         {width < 768 && <img src="/assets/images/prayer-3.svg" alt="gallery" />}
         {width >= 768 && (
-          <img src="/assets/images/prayer-2.svg" alt="gallery" />
+          <img
+            src="/assets/images/prayer-2.svg"
+            alt="gallery"
+            className="lg:w-[1024px] md:w-[700px] lg:h-[512px]"
+          />
         )}
       </div>
 

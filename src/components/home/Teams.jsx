@@ -50,9 +50,9 @@ const Teams = () => {
               <img
                 src={item.img}
                 alt={item.name}
-                className="object-cover h-[380px] w-[353px] md:w-[630px]"
+                className="object-cover h-[380px] w-[353px] lg:w-[630px] md:w-[380px]"
               />
-              <div className="text-center text-2xl font-bold font-satoshi border-4 rounded-[5px] border-white text-white z-10 absolute bottom-[20px] left-0 right-0 mx-auto w-[292px] h-[60px] flex justify-center items-center md:w-[468px] md:h-[89px] md:bottom-[33px] hover:cursor-pointer">
+              <div className="text-center text-2xl font-bold font-satoshi border-4 rounded-[5px] border-white text-white z-10 absolute bottom-[20px] left-0 right-0 mx-auto w-[292px] h-[60px] flex justify-center items-center md:w-[330px] lg:w-[468px] md:h-[89px] md:bottom-[33px] hover:cursor-pointer">
                 <a href="#" className="">
                   <p>{item.text}</p>
                 </a>
@@ -65,7 +65,7 @@ const Teams = () => {
       <h2 className="uppercase mt-[49px] font-satoshi font-bold text-xl">
         And amazing follow-up team
       </h2>
-      <p className="font-satoshi font-normal text-base text-center text-[#161722] w-[372px] mt-[3px]">
+      <p className="font-satoshi font-normal text-base text-center text-[#161722] w-[360px] mt-[3px] md:w-[512px] md:mt-[19px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>

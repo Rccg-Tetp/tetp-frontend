@@ -17,7 +17,7 @@ function LastService() {
   }, []);
   const opts = {
     height: `${width < 768 ? 455 : 485}`,
-    width: `${width < 768 ? 362 : 1280}`,
+    width: `${width < 768 ? 362 : width < 1200 ? 800 : 1280}`,
   };
   return (
     <section className="md:bg-gray-custom flex flex-col items-center">

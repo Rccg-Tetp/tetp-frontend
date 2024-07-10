@@ -37,7 +37,7 @@ const SermonsSection = () => {
           {sermons.map((item, id) => {
             return (
               <div
-                className="bg-white shadow-lg relative w-[300px] h-[320px] md:w-[354px] md:h-[356px]"
+                className="bg-white shadow-lg relative w-[300px] h-[320px] md:w-[240px] lg:w-[354px] md:h-[300px] lg:h-[356px]"
                 key={id}
               >
                 <img src={`${item.image}`} alt="Bible" />

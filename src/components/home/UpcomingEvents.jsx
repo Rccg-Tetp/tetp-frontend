@@ -13,20 +13,20 @@ const UpcomingEvents = () => {
         upcoming events
       </h2>
 
-      <div className="flex flex-col gap-[72px] mt-[52px] md:flex-row md:mt-[58px] md:gap-[37px]">
+      <div className="flex flex-col gap-[72px] mt-[52px] md:flex-row md:mt-[58px] md:gap-[15px] lg:gap-[37px] md:ml-4 lg:ml-0">
         {data.map((item) => {
           return (
             <div key={item.img} className="relative">
               <img
                 src={item.img}
                 alt=""
-                className="w-[353px] h-[316px] md:w-[391px]"
+                className="w-[353px] h-[316px] md:w-[230px] lg:w-[391px] md:h-[280px] lg:h-[316px]"
               />
-              <div className="bg-white w-[82px] h-[75px] flex flex-col justify-center items-center absolute z-10 right-[18px] top-[30px] rounded font-bold text-xl font-satoshi md:h-[91px] md:right-[18px] md:top-[22px]">
+              <div className="bg-white w-[82px] h-[75px] flex flex-col justify-center items-center absolute z-10 right-[18px] top-[30px] rounded font-bold text-xl font-satoshi lg:h-[91px] md:right-[18px] lg:top-[22px] md:h-[80px] md:top-[62px]">
                 <p>May</p>
                 <p>6</p>
               </div>
-              <div className="flex mx-auto justify-center mt-[27px] gap-4 text-base font-satoshi font-normal">
+              <div className="flex mx-auto justify-center mt-[27px] gap-4 text-base font-satoshi font-normal md:mt-0 lg:mt-[27px] md:gap-1 lg:gap-4 md:text-xs lg:text-base">
                 <p>9:30 AM</p>
                 <p>Rccg | The everlasting truth parish</p>
               </div>
