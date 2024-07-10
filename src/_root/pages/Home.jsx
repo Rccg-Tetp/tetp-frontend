@@ -1,10 +1,10 @@
-import EventTimer from "../../components/EventTimer";
-import HeroSection from "../../components/HeroSection";
-import LastService from "../../components/LastService";
-import PrayerSection from "../../components/PrayerSection";
-import SermonsSection from "../../components/SermonsSection";
-import Teams from "../../components/Teams";
-import UpcomingEvents from "../../components/UpcomingEvents";
+import EventTimer from "../../components/home/EventTimer";
+import HeroSection from "../../components/home/HeroSection";
+import LastService from "../../components/home/LastService";
+import PrayerSection from "../../components/home/PrayerSection";
+import SermonsSection from "../../components/home/SermonsSection";
+import Teams from "../../components/home/Teams";
+import UpcomingEvents from "../../components/home/UpcomingEvents";
 
 const Home = () => {
   return (

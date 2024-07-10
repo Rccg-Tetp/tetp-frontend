@@ -4,7 +4,7 @@ export const navLinks = [
     label: "Home",
   },
   {
-    route: "/sermons",
+    route: "#",
     label: "Sermons",
   },
   {
@@ -12,15 +12,15 @@ export const navLinks = [
     label: "About",
   },
   {
-    route: "/bio-data",
+    route: "#",
     label: "Bio data",
   },
   {
-    route: "/events",
+    route: "#",
     label: "Events",
   },
   {
-    route: "/donations",
+    route: "#",
     label: "Donations",
   },
 ];

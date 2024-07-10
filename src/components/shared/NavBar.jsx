@@ -31,7 +31,7 @@ const NavBar = () => {
 
       <div
         id="bottom-nav"
-        className="h-[68px] flex justify-between bg-white p-5 border md:px-[81px]"
+        className="h-[68px] flex justify-between bg-white p-5 md:px-[81px]"
       >
         <a href="/">
           <img src="/assets/icons/logo.svg" alt="logo" height={30} width={30} />
