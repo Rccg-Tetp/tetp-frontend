@@ -60,7 +60,7 @@ const ImageGallery = () => {
           </div>
         )}
         <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-6 md:mt-[101px] md:mb-[120px]">
-          <div className="flex flex-col mt-[96px] gap-[23px] w-[371px] md:mt-0 md:items-start md:text-left">
+          <div className="flex flex-col mt-[96px] gap-[23px] w-[350px] md:w-[371px] md:mt-0 md:items-start md:text-left">
             <h3 className="font-lateef font-normal text-lg uppercase">
               OUR MISSIOn & Vision
             </h3>
@@ -75,7 +75,7 @@ const ImageGallery = () => {
               reprehenderit in voluptate velit esse cillum.
             </p>
           </div>
-          <div className="flex flex-col mt-[96px] gap-[23px] w-[371px] pb-[79px] md:mt-0 md:pb-0 md:items-start md:text-left">
+          <div className="flex flex-col mt-[96px] gap-[23px] w-[350px] md:w-[371px] pb-[79px] md:mt-0 md:pb-0 md:items-start md:text-left">
             <h3 className="font-lateef font-normal text-lg uppercase">
               WHAT WE DO
             </h3>

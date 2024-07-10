@@ -19,7 +19,7 @@ function Benefit() {
             <h2 className="uppercase font-bold text-xl/[44px] ">
               find fulfillment and joy
             </h2>
-            <p className="font-normal text-lg/6 w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -39,7 +39,7 @@ function Benefit() {
             <h2 className="uppercase font-bold text-xl/[44px] ">
               shared values
             </h2>
-            <p className="font-normal text-lg/6 w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -59,7 +59,7 @@ function Benefit() {
             <h2 className="uppercase font-bold text-xl/[44px] ">
               charity events
             </h2>
-            <p className="font-normal text-lg/6 w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -79,7 +79,7 @@ function Benefit() {
             <h2 className="uppercase font-bold text-xl/[44px] ">
               All are welcome
             </h2>
-            <p className="font-normal text-lg/6 w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

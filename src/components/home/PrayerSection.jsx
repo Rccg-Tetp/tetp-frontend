@@ -1,6 +1,6 @@
 const PrayerSection = () => {
   return (
-    <section className="pb-[3.25rem] md:flex md:justify-between md:gap-[140px]">
+    <section className="pb-[3.25rem] md:flex md:justify-between md:gap-[140px] lg:gap-[300px]">
       <div className="relative h-fit">
         <div className="w-[164px] h-[223px] border-orange-650/[63%] border-[3.5px] rounded-[20px] ml-[35px] mt-[50px] md:w-[260px] md:h-[446px] md:ml-[70px] lg:ml-[80px] md:mt-[114px]"></div>
         <img
