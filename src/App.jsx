@@ -9,7 +9,7 @@ import SermonDetails from "./_root/pages/SermonDetails";
 
 function App() {
   return (
-    <main className="flex h-screen font-lateef font-extralight">
+    <main className="flex h-dvh font-lateef font-extralight">
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
