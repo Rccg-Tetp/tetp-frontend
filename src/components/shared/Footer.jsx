@@ -12,7 +12,7 @@ const Footer = () => {
             height={53}
             width={53}
           />
-          <h3 className="text-sm/[18.9px] font-bold mt-[15px]">
+          <h3 className="text-sm/[18.9px] font-bold mt-[15px] md:w-[164px]">
             Rccg/The Everlasting Truth Parish
           </h3>
           <p className="text-xs font-normal mt-[9px] text-center w-[267px] md:w-[211px] md:text-left">
@@ -35,13 +35,13 @@ const Footer = () => {
 
         <div className="flex flex-col items-center mt-[22px] md:items-start md:mt-[48px] md:w-[183px] md:order-4 order-2 md:mr-[158px]">
           <h3 className="text-sm/[18.9px] font-bold md:text-start">Service</h3>
-          <p className="text-xs font-normal mt-[15px] text-center md:text-start">
+          <p className="text-xs font-normal mt-[16px] text-center md:text-start">
             Digging deep (Every Tuesday, 6pm-7:30pm)
           </p>
-          <p className="text-xs font-normal mt-[15px] text-center md:text-start">
+          <p className="text-xs font-normal mt-[24px] text-center md:text-start">
             Faith clinic (Every Thursday, 6pm-7:30pm)
           </p>
-          <p className="text-xs font-normal mt-[15px] text-center md:text-start">
+          <p className="text-xs font-normal mt-[24px] text-center md:text-start">
             Celebration service (Every sunday, 8:45am-10:30am)
           </p>
         </div>
