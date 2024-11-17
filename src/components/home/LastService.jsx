@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 
 function LastService() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [latestVideoId, setLatestVideoId] = useState(null);
+
+  const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+  const CHANNEL_ID = import.meta.env.VITE_CHANNEL_ID;
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,13 +19,55 @@ function LastService() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const fetchLatestVideo = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1`
+        );
+        const data = await response.json();
+        let lastSundayVideo = null;
+        if (data.items && data.items.length > 0) {
+          for (let video of data.items) {
+            const publishedDate = new Date(video.snippet.publishedAt);
+            // Check if the video was published on a Sunday (0 represents Sunday)
+            if (publishedDate.getDay() === 0) {
+              // If this is the first Sunday video or a more recent one, update lastSundayVideo
+              if (
+                !lastSundayVideo ||
+                publishedDate > new Date(lastSundayVideo.snippet.publishedAt)
+              ) {
+                lastSundayVideo = video;
+              }
+            }
+          }
+          if (lastSundayVideo) {
+            setLatestVideoId(lastSundayVideo.id.videoId);
+          } else {
+            console.log("No video posted on a Sunday.");
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching latest video:", error);
+      }
+    };
+
+    fetchLatestVideo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const opts = {
     height: `${width < 768 ? 455 : 485}`,
     width: `${width < 768 ? 362 : width < 1200 ? 800 : 1280}`,
   };
   return (
     <section className="md:bg-gray-custom flex flex-col items-center">
-      <YouTube videoId="pFMKEYEf7Ek" opts={opts} className="md:mt-[75px]" />
+      {latestVideoId ? (
+        <YouTube videoId={latestVideoId} opts={opts} className="md:mt-[75px]" />
+      ) : (
+        <p>Loading latest video...</p>
+      )}
       <h2 className="uppercase font-satoshi text-xl font-bold mt-[44px] md:text-3xl">
         Watch our latest service
       </h2>

@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         lateef: ["Lateef", "serif"],
         satoshi: ["Satoshi-Variable", "serif"],
+        "roboto-condensed": ["Roboto Condensed", "sans-serif"],
       },
       textShadow: {
         outline:

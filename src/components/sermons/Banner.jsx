@@ -19,19 +19,19 @@ const Banner = () => {
     <section className="w-full">
       <div className="">
         <div
-          className=" bg-opacity-35 bg-no-repeat bg-cover w-full text-black font-lateef"
+          className=" bg-opacity-35 bg-no-repeat bg-cover w-full text-black font-lateef md:h-[419px]"
           style={{
             backgroundImage: `${
               width < 768
-                ? `url("/assets/images/about-banner-img.png")`
-                : `url("/assets/images/about-banner-img-lg.svg")`
+                ? `url("/assets/images/sermon-banner.svg")`
+                : `url("/assets/images/sermon-banner.svg")`
             } `,
           }}
         >
-          <div className="h-full pt-[135px] flex flex-col gap-6 uppercase font-normal text-center items-center pb-[90px] md:items-start md:pl-[87px]">
-            <p className="text-xl lg:ml-5 md:text-start">About Us</p>
-            <h2 className="text-5xl/[64px] lg:text-5xl/[64px] w-[360px] lg:w-[733px] md:w-[600px] md:text-4xl md:text-start lg:ml-5">
-              loving ourselves as christ intended
+          <div className="h-full pt-[135px] flex flex-col gap-6 md:gap-[10px] uppercase font-normal text-center md:text-start items-center pb-[90px] md:items-start md:pl-[87px]">
+            <p className="text-xl">SERMON</p>
+            <h2 className="text-5xl/[64px] w-full md:font-normal">
+              take part in OUR SERMON
             </h2>
           </div>
         </div>

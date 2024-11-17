@@ -3,9 +3,9 @@ const Footer = () => {
     <section>
       <div
         id="top-div"
-        className="bg-[#F14A16CC] text-white flex flex-col font-satoshi pb-[123px] md:flex-row"
+        className="bg-[#F14A16CC] text-white flex flex-col font-satoshi pb-[123px] md:flex-row md:justify-center md:gap-11 lg:gap-0"
       >
-        <div className="flex flex-col items-center mt-[38px] md:items-start md:mt-[40px] md:ml-[77px] md:pr-[121px] order-1">
+        <div className="flex flex-col items-center mt-[38px] md:items-start md:mt-[40px] lg:ml-[77px] lg:pr-[121px] order-1">
           <img
             src="/assets/icons/logo-white.svg"
             alt="logo"
@@ -21,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="hidden md:flex flex-col items-center mt-[15px] md:mt-[48px] md:items-start md:pr-[170px] md:order-2">
+        <div className="hidden md:flex flex-col items-center mt-[15px] md:mt-[48px] md:items-start lg:pr-[170px] md:order-2">
           <h3 className="text-sm/[18.9px] font-bold">About us</h3>
           <div className="text-[10px]/[13.5px] font-normal mt-[15px] text-center flex gap-8 md:flex-col md:gap-[15px] md:text-left">
             <a href="#">Home</a>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center mt-[22px] md:items-start md:mt-[48px] md:w-[183px] md:order-4 order-2 md:mr-[158px]">
+        <div className="flex flex-col items-center mt-[22px] md:items-start md:mt-[48px] md:w-[183px] md:order-4 order-2 lg:mr-[158px]">
           <h3 className="text-sm/[18.9px] font-bold md:text-start">Service</h3>
           <p className="text-xs font-normal mt-[16px] text-center md:text-start">
             Digging deep (Every Tuesday, 6pm-7:30pm)
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div
-          className="flex flex-col items-center mt-[15px] md:mt-[48px] md:items-start md:order-3 order-3 md:mr-[179px]"
+          className="flex flex-col items-center mt-[15px] md:mt-[48px] md:items-start md:order-3 order-3 lg:mr-[179px]"
           id="media"
         >
           <h3 className="text-sm/[18.9px] font-bold">Media</h3>

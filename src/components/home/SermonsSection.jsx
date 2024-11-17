@@ -34,11 +34,11 @@ const SermonsSection = () => {
           <h1 className="text-xl mt-[15px] font-satoshi font-bold">SERMONS</h1>
         </div>
         <div className="flex flex-col md:flex-row gap-[42px] md:gap-5 items-center mt-[42px] justify-center">
-          {sermons.map((item, id) => {
+          {sermons.map((item) => {
             return (
               <div
                 className="bg-white shadow-lg relative w-[300px] h-[320px] md:w-[240px] lg:w-[354px] md:h-[300px] lg:h-[356px]"
-                key={id}
+                key={item.id}
               >
                 <img src={`${item.image}`} alt="Bible" />
                 <div className="w-full -bottom-1 bg-white text-black pl-[22px] py-[23px] absolute font-satoshi">

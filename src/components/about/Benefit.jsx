@@ -12,14 +12,14 @@ function Benefit() {
         <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[24px]">
           <img
             src="/assets/images/benefit-img-1.svg"
-            className="w-[365px] md:w-[500px] md:order-2"
+            className="w-[365px] md:w-[400px] lg:w-[500px] md:order-2"
             alt=""
           />
-          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start md:w-[500px]">
+          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start lg:w-[500px]">
             <h2 className="uppercase font-bold text-xl/[44px] ">
               find fulfillment and joy
             </h2>
-            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px]  lg:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -29,17 +29,17 @@ function Benefit() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[48px]">
+        <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[24px] lg:gap-[48px]">
           <img
             src="/assets/images/benefit-img-2.svg"
-            className="w-[365px] md:w-[500px]"
+            className="w-[365px] md:w-[400px] lg:w-[500px]"
             alt=""
           />
-          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start md:w-[476px]">
+          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start lg:w-[476px]">
             <h2 className="uppercase font-bold text-xl/[44px] ">
               shared values
             </h2>
-            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px]  lg:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -52,14 +52,14 @@ function Benefit() {
         <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[24px]">
           <img
             src="/assets/images/benefit-img-3.svg"
-            className="w-[365px] md:w-[500px] md:order-2"
+            className="w-[365px] md:w-[400px] lg:w-[500px] md:order-2"
             alt=""
           />
-          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start md:w-[500px]">
+          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start lg:w-[500px]">
             <h2 className="uppercase font-bold text-xl/[44px] ">
               charity events
             </h2>
-            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px]  lg:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -69,17 +69,17 @@ function Benefit() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[48px]">
+        <div className="flex flex-col items-center gap-[74px] md:flex-row md:justify-center md:gap-[24px] lg:gap-[48px]">
           <img
             src="/assets/images/benefit-img-4.svg"
-            className="w-[365px] md:w-[500px]"
+            className="w-[365px] md:w-[400px] lg:w-[500px]"
             alt=""
           />
-          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start md:w-[476px]">
+          <div className="flex flex-col gap-[16px] font-satoshi text-center items-center md:text-start md:items-start lg:w-[476px]">
             <h2 className="uppercase font-bold text-xl/[44px] ">
               All are welcome
             </h2>
-            <p className="font-normal text-lg/6 w-[350px] md:w-[370px]">
+            <p className="font-normal text-lg/6 w-[350px]  lg:w-[370px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
