@@ -17,6 +17,7 @@ function App() {
           <Route path="/sermons" element={<Sermons />} />
           <Route path="/sermons/:id" element={<SermonDetails />} />
           <Route path="/about" element={<About />} />
+          {/* <Route path="*" element={<Home />} /> */}
         </Route>
       </Routes>
     </main>
