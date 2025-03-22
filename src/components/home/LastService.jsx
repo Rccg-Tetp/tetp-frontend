@@ -24,11 +24,12 @@ function LastService() {
     const fetchLatestVideo = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1`
+          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=4`
         );
         const data = await response.json();
         let lastSundayVideo = null;
         if (data.items && data.items.length > 0) {
+          console.log(data.items);
           for (let video of data.items) {
             const publishedDate = new Date(video.snippet.publishedAt);
             // Check if the video was published on a Sunday (0 represents Sunday)
@@ -66,7 +67,9 @@ function LastService() {
       {latestVideoId ? (
         <YouTube videoId={latestVideoId} opts={opts} className="md:mt-[75px]" />
       ) : (
-        <p>Loading latest video...</p>
+        <div className="flex justify-center mt-[44px]">
+          <div className="animate-spin rounded-full h-5 w-5 border-2 border-b-[#d0d0ce3e]  border-[#F14A16CC]"></div>
+        </div>
       )}
       <h2 className="uppercase font-satoshi text-xl font-bold mt-[44px] md:text-3xl">
         Watch our latest service
