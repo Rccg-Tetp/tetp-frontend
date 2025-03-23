@@ -29,12 +29,24 @@ function LastService() {
         const data = await response.json();
         let lastSundayVideo = null;
         if (data.items && data.items.length > 0) {
-          console.log(data.items);
           for (let video of data.items) {
             const publishedDate = new Date(video.snippet.publishedAt);
+            const titleDateString = video.snippet.title.split("|")[1].trim();
+            const formattedDateString = titleDateString.replace(
+              /(\d+)(st|nd|rd|th)/,
+              "$1"
+            ); // Remove ordinal suffix
+            const newDate = new Date(formattedDateString);
             // Check if the video was published on a Sunday (0 represents Sunday)
-            if (publishedDate.getDay() === 0) {
+            if (newDate && newDate.getDay() === 0) {
               // If this is the first Sunday video or a more recent one, update lastSundayVideo
+              if (
+                !lastSundayVideo ||
+                publishedDate > new Date(lastSundayVideo.snippet.publishedAt)
+              ) {
+                lastSundayVideo = video;
+              }
+            } else if (publishedDate.getDay() === 0) {
               if (
                 !lastSundayVideo ||
                 publishedDate > new Date(lastSundayVideo.snippet.publishedAt)
