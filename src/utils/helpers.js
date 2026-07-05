@@ -1,21 +1,48 @@
-export const getNextSunday = (date) => {
+const SERVICES = [
+  { day: 0, label: "Celebration Service", time: "8:00 AM" },
+  { day: 2, label: "Empowerment Service", time: "6:00 PM" },
+  { day: 4, label: "Solution Hour", time: "6:00 PM" },
+];
+
+export const getNextService = (date) => {
   if (!(date instanceof Date)) {
     throw new Error("Invalid date");
   }
 
-  const dayOfWeek = date.getDay();
+  const baseDate = new Date(date);
+  baseDate.setHours(0, 0, 0, 0);
 
-  const daysUntilNextSunday = 7 - dayOfWeek || 7;
+  for (let offset = 0; offset < 14; offset += 1) {
+    const candidate = new Date(baseDate);
+    candidate.setDate(baseDate.getDate() + offset);
 
-  const nextSunday = new Date(date);
-  nextSunday.setDate(date.getDate() + daysUntilNextSunday);
-  nextSunday.setHours(8, 0, 0, 0);
+    const service = SERVICES.find((item) => item.day === candidate.getDay());
 
-  return nextSunday;
+    if (!service) continue;
+
+    const [hours, minutes] = service.time.match(/(\d+):(\d+)/).slice(1).map(Number);
+    const isPm = /PM/i.test(service.time);
+    const adjustedHours = isPm && hours !== 12 ? hours + 12 : hours;
+
+    candidate.setHours(adjustedHours, minutes, 0, 0);
+
+    if (candidate > date) {
+      return { ...service, date: candidate };
+    }
+  }
+
+  const nextWeek = new Date(baseDate);
+  nextWeek.setDate(baseDate.getDate() + 7);
+  const firstService = SERVICES[0];
+  const [hours, minutes] = firstService.time.match(/(\d+):(\d+)/).slice(1).map(Number);
+  nextWeek.setHours(hours, minutes, 0, 0);
+
+  return { ...firstService, date: nextWeek };
 };
 
 export const calculateTimeLeft = (date) => {
-  const difference = +new Date(getNextSunday(date)) - +new Date();
+  const nextService = getNextService(date);
+  const difference = +new Date(nextService.date) - +new Date();
   let timeLeft = {};
 
   if (difference > 0) {

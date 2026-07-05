@@ -1,10 +1,10 @@
 // import React from 'react'
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import { navLinks } from "../../constants/index";
-import { NavLink, useLocation } from "react-router-dom";
-import { Slide, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import { navLinks } from '../../constants/index';
+import { NavLink, useLocation } from 'react-router-dom';
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
   const { pathname } = useLocation();
@@ -17,14 +17,14 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
     const fetchLiveVideo = async () => {
       try {
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&eventType=live&type=video`
+          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&eventType=live&type=video`,
         );
         const data = await response.json();
         if (data.items && data.items.length > 0) {
           setLiveVideoId(data.items[0].id.videoId);
         }
       } catch (error) {
-        console.error("Error fetching live video:", error);
+        console.error('Error fetching live video:', error);
       }
     };
 
@@ -33,7 +33,7 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
   }, []);
 
   const notify = () => {
-    toast.info("Live video not available now");
+    toast.info('Live video not available now');
   };
 
   return (
@@ -56,29 +56,51 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
         id="top-nav"
         className="bg-black text-white h-[60px] text-sm flex fixed top-0 left-0 right-0 items-center justify-between md:w-full md:px-[87px] px-4 z-50"
       >
-        <div
-          className="flex gap-2 items-center content-center cursor-pointer"
-          onClick={() =>
-            liveVideoId
-              ? window.open(
-                  `https://www.youtube.com/watch?v=${liveVideoId}`,
-                  "_blank"
-                )
-              : notify()
-          }
-        >
-          <img src="/assets/icons/red_ellipse.svg" alt="ellipse" />
-          <p>Join live service now</p>
-          <img src="/assets/icons/arrow.svg" alt="arrow" />
+        <div className="flex gap-4 items-center">
+          <div
+            className="flex gap-2 items-center content-center cursor-pointer hover:text-orange-650 transition"
+            onClick={() =>
+              liveVideoId
+                ? window.open(
+                    `https://www.youtube.com/watch?v=${liveVideoId}`,
+                    '_blank',
+                  )
+                : notify()
+            }
+          >
+            <img src="/assets/icons/red_ellipse.svg" alt="ellipse" />
+            <p>Join live service now</p>
+            <img src="/assets/icons/arrow.svg" alt="arrow" />
+          </div>
+          <a
+            href="https://meet.google.com/upn-gebn-gtk"
+            target="_blank"
+            title="Join on Google Meet"
+            className="text-xs font-medium hover:text-orange-650 transition"
+          >
+            Google Meet
+          </a>
         </div>
-        <div id="icons" className="flex gap-[18px]">
-          <a href="https://www.youtube.com/@rccgtetp" target="_blank">
+        <div id="icons" className="flex gap-[18px] items-center">
+          <a
+            href="https://www.youtube.com/@rccgtetp"
+            target="_blank"
+            className="hover:text-orange-650 transition"
+          >
             <img src="/assets/icons/youtube.svg" alt="" />
           </a>
-          <a href="https://www.facebook.com/rccgtetp/" target="_blank">
+          <a
+            href="https://www.facebook.com/rccgtetp/"
+            target="_blank"
+            className="hover:text-orange-650 transition"
+          >
             <img src="/assets/icons/facebook.svg" alt="" />
           </a>
-          <a href="https://www.instagram.com/rccgtetp/?hl=en" target="_blank">
+          <a
+            href="https://www.instagram.com/rccgtetp/?hl=en"
+            target="_blank"
+            className="hover:text-orange-650 transition"
+          >
             <img src="/assets/icons/insta.svg" alt="" />
           </a>
         </div>
@@ -107,7 +129,7 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
             return (
               <li
                 key={item.label}
-                className={`font-lateef ${isActive && "text-orange-650"}`}
+                className={`font-lateef transition-colors ${isActive ? 'text-orange-650' : 'hover:text-orange-650'}`}
               >
                 <NavLink to={item.route}>{item.label}</NavLink>
               </li>
@@ -118,13 +140,13 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
         <div
           id="sideBar"
           className={`w-full h-[368px] md:hidden bg-white absolute z-20 top-0 left-0 transition-transform duration-300 ease-in-out ${
-            isSidebarOpen ? "translate-y-0" : "-translate-y-full"
+            isSidebarOpen ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
           <div className="flex justify-end mt-[33.76px] mr-[30.76px]">
             <img
               src="/assets/icons/x-icon.svg"
-              className={`${!isSidebarOpen ? "hidden" : "block"}`}
+              className={`${!isSidebarOpen ? 'hidden' : 'block'}`}
               onClick={toggleSidebar}
               alt="x-icon"
             />
@@ -136,7 +158,7 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
               return (
                 <li
                   key={item.label}
-                  className={`font-lateef ${isActive && "text-orange-650"}`}
+                  className={`font-lateef transition-colors ${isActive ? 'text-orange-650' : 'hover:text-orange-650'}`}
                 >
                   <NavLink to={item.route}>{item.label}</NavLink>
                 </li>
