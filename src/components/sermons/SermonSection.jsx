@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
+import { toast } from 'react-toastify';
 
 function SermonSection() {
   const [width, setWidth] = useState(window.innerWidth);
   const [playingId, setPlayingId] = useState(null);
+  const [loadingId, setLoadingId] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [sermonsData, setSermonsData] = useState([]);
@@ -108,12 +110,21 @@ function SermonSection() {
 
       // If audio already exists for this id (was paused), just resume
       if (audioRefs.current[id]) {
-        audioRefs.current[id].play().catch((err) => console.error('Play error:', err));
+        setLoadingId(id);
+        audioRefs.current[id]
+          .play()
+          .then(() => setLoadingId(null))
+          .catch((err) => {
+            console.error('Play error:', err);
+            setLoadingId(null);
+            toast.error('Unable to play audio. Please try again.');
+          });
         setPlayingId(id);
         return;
       }
 
       try {
+        setLoadingId(id);
         const headers = {
           'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
           'x-rapidapi-host': import.meta.env.VITE_RAPIDAPI_HOST,
@@ -132,11 +143,17 @@ function SermonSection() {
 
         if (!streamingUrl) {
           console.error('No streaming URL available');
+          setLoadingId(null);
+          toast.error('Unable to play audio. Please try again.');
           return;
         }
 
         // Create new audio element with fresh listeners
         const audio = new Audio(streamingUrl);
+
+        audio.oncanplay = () => {
+          setLoadingId(null);
+        };
 
         audio.ontimeupdate = () => {
           setCurrentTime(audio.currentTime);
@@ -154,10 +171,18 @@ function SermonSection() {
         };
 
         audioRefs.current[id] = audio;
-        audio.play().catch((err) => console.error('Play error:', err));
+        audio.play().catch((err) => {
+          console.error('Play error:', err);
+          setLoadingId(null);
+          toast.error('Unable to play audio. Please try again.', {
+            progress: 0
+          });
+        });
         setPlayingId(id);
       } catch (error) {
         console.error('Error fetching streaming URL:', error);
+        setLoadingId(null);
+        toast.error('Unable to play audio. Please try again.', { progress: 0 });
       }
     }
   };
@@ -191,6 +216,7 @@ function SermonSection() {
         <div className="grid grid-cols-1 gap-[49px] font-satoshi md:grid-cols-2 lg:grid-cols-4 md:gap-6 cursor-pointer">
           {sermonsData.map((item, id) => {
             const isPlaying = playingId === item.id;
+            const isLoadingThis = loadingId === item.id;
             const progressPercent = duration
               ? (currentTime / duration) * 100
               : 0;
@@ -232,17 +258,35 @@ function SermonSection() {
                     <>
                       <button
                         onClick={() => handlePlay(item.id, item.musicId)}
-                        className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center hover:opacity-80 transition flex-shrink-0"
-                        aria-label="Play audio"
+                        disabled={isLoadingThis}
+                        className={`w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition flex-shrink-0 ${isLoadingThis ? 'bg-[#F14A16]' : 'bg-gray-300'
+                          }`}
+                        aria-label={isLoadingThis ? 'Loading audio' : 'Play audio'}
                       >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="white"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
+                        {isLoadingThis ? (
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="animate-spin"
+                          >
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="white"
+                              strokeWidth="3"
+                              strokeDasharray="32"
+                              strokeDashoffset="12"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        )}
                       </button>
 
                       <span className="text-xs text-[#161722] font-medium min-w-[35px]">

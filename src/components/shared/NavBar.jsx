@@ -33,13 +33,13 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
   }, []);
 
   const notify = () => {
-    toast.info('Live video not available now');
+    toast.info('Live video not available now', { progress: 0 });
   };
 
   return (
     <div className="w-full relative mb-[3.65rem]">
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={1000}
         hideProgressBar={true}
         newestOnTop={false}
@@ -62,9 +62,9 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
             onClick={() =>
               liveVideoId
                 ? window.open(
-                    `https://www.youtube.com/watch?v=${liveVideoId}`,
-                    '_blank',
-                  )
+                  `https://www.youtube.com/watch?v=${liveVideoId}`,
+                  '_blank',
+                )
                 : notify()
             }
           >
@@ -139,9 +139,8 @@ const NavBar = ({ isSidebarOpen, toggleSidebar }) => {
 
         <div
           id="sideBar"
-          className={`w-full h-[368px] md:hidden bg-white absolute z-20 top-0 left-0 transition-transform duration-300 ease-in-out ${
-            isSidebarOpen ? 'translate-y-0' : '-translate-y-full'
-          }`}
+          className={`w-full h-[368px] md:hidden bg-white absolute z-20 top-0 left-0 transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-y-0' : '-translate-y-full'
+            }`}
         >
           <div className="flex justify-end mt-[33.76px] mr-[30.76px]">
             <img
